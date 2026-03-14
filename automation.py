@@ -34,23 +34,30 @@ def generate_data(names: list, ages: list, rgs: list, cpfs: list):
 
 if __name__ == "__main__":
 
-    fake = Faker('pt_BR')
+    try:
 
-    names = []
-    ages = []
-    rgs = []
-    cpfs = []
+        fake = Faker('pt_BR')
 
-    generate_data(names, ages, rgs, cpfs)
+        names = []
+        ages = []
+        rgs = []
+        cpfs = []
 
-    total = len(names)
+        generate_data(names, ages, rgs, cpfs)
 
-    for i, (name, age, rg, cpf) in enumerate(zip(names, ages, rgs, cpfs), start=1):
+        total = len(names)
 
-        insert_cmd(name, age, rg, cpf)
+        print("Initialing users injection...")
 
-        progress = (i / total) * 100
-        sys.stdout.write(f"\rProgress: {i}/{total} ({progress:.2f}%)")
-        sys.stdout.flush()
+        for i, (name, age, rg, cpf) in enumerate(zip(names, ages, rgs, cpfs), start=1):
 
-    print("\nDone.")
+            insert_cmd(name, age, rg, cpf)
+
+            progress = (i / total) * 100
+            sys.stdout.write(f"\rProgress: {i}/{total} ({progress:.2f}%)")
+            sys.stdout.flush()
+
+        print("\nDone.")
+
+    except Exception as error:
+        print(f"{error}")
