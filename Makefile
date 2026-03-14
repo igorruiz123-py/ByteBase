@@ -18,7 +18,7 @@ MAIN_SRC = $(SRC_PATH)/main.c
 
 FUNCS_SRC = $(SRC_PATH)/funcs.c
 
-.PHONY: compile clean
+.PHONY: compile clean inject
 
 $(BIN_PATH):
 	mkdir -p $(BIN_PATH)
@@ -41,3 +41,6 @@ clean:
 	rm -f $(FILES_OBJ) $(TARGET)
 	@echo "[INFO] removing source code..."
 	@echo "[OK] source code removed."
+
+inject:
+	python3 automation.py
