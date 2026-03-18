@@ -47,8 +47,6 @@ if __name__ == "__main__":
 
         total = len(names)
 
-        print("Initialing users injection...")
-
         for i, (name, age, rg, cpf) in enumerate(zip(names, ages, rgs, cpfs), start=1):
 
             insert_cmd(name, age, rg, cpf)
@@ -57,7 +55,7 @@ if __name__ == "__main__":
             sys.stdout.write(f"\rProgress: {i}/{total} ({progress:.2f}%)")
             sys.stdout.flush()
 
-        print("\nDone.")
+        print()
 
     except Exception as error:
         print(f"{error}")
