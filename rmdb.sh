@@ -1,13 +1,20 @@
+#!/bin/bash
+
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+RESET="\e[0m"
+
 DB="output/bin/db.bin"
 
 if test -e $DB; then
 
-    echo "[INFO] removing 'db.bin'..."
+    printf "${YELLOW} [INFO] removing 'db.bin'... ${RESET} \n"
     rm -f $DB
-    echo "[OK] 'db.bin' removed."
+    printf "${GREEN} [OK] 'db.bin' removed. ${RESET} \n"
 
 else 
 
-    echo "[INFO] no such file of 'output/bin/db.bin' found."
+    printf "${RED} [ERROR] no such file of 'output/bin/db.bin' found. ${RESET} \n"
 
 fi
