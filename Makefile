@@ -18,7 +18,7 @@ MAIN_SRC = $(SRC_PATH)/main.c
 
 FUNCS_SRC = $(SRC_PATH)/funcs.c
 
-.PHONY: compile clean inject
+.PHONY: compile clean inject build delete
 
 $(BIN_PATH):
 	mkdir -p $(BIN_PATH)
@@ -38,9 +38,23 @@ compile:
 	@echo "[OK] compilation done."
 
 clean:
-	rm -f $(FILES_OBJ) $(TARGET)
 	@echo "[INFO] removing source code..."
+	rm -f $(FILES_OBJ) $(TARGET)
 	@echo "[OK] source code removed."
 
 inject:
+	@echo "[INFO] starting users injection on the database..."
 	python3 automation.py
+	@echo "[OK] injection done."
+
+build:
+	@echo "[INFO] granting executable permission for 'build.sh'..."
+	chmod +x build.sh
+	@echo "[OK] permission granted."
+	./build.sh
+
+delete:
+	@echo "[INFO] granting executable permission for 'rmdb.sh'..."
+	chmod +x rmdb.sh
+	@echo "[OK] permission granted."
+	./rmdb.sh
