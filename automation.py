@@ -3,6 +3,10 @@ import random
 import sys
 from faker import Faker
 
+RED = "\033[31m"
+GREEN = "\033[32m"
+YELLOW = "\033[33m"
+RESET = "\033[0m"
 
 def insert_cmd(name: str, age: int, rg: str, cpf: str):
 
@@ -47,15 +51,19 @@ if __name__ == "__main__":
 
         total = len(names)
 
+        print(f"{YELLOW} [INFO] starting users injection on the database... {RESET}")
+
         for i, (name, age, rg, cpf) in enumerate(zip(names, ages, rgs, cpfs), start=1):
 
             insert_cmd(name, age, rg, cpf)
 
             progress = (i / total) * 100
-            sys.stdout.write(f"\rProgress: {i}/{total} ({progress:.2f}%)")
+            sys.stdout.write(f"\rprogress: {i}/{total} ({progress:.2f}%)")
             sys.stdout.flush()
 
         print()
 
-    except Exception as error:
-        print(f"{error}")
+        print(f"{GREEN} [OK] injection done. {RESET}")
+
+    except FileNotFoundError:
+        print(f"{RED} [ERROR] no such file of 'output/bin/bytebase'. {RESET}")
