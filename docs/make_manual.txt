@@ -1,0 +1,65 @@
+# MANUAL ON HOW TO USE THE COMMANDS WITH MAKE #
+
+* IMPORTANT: make sure to have the newest version of 'make' utility installed on your computer *
+
+* IMPORTANT: when running the "make" commands, you need to be on the same directory as the file: "Makefile" *
+
+* Brief contextualization: A Makefile is a text file that contains instructions (rules, variables, and directives)
+used by the make utility to automate tasks, most commonly the compilation and linking of software projects. 
+
+Makefile is used on ByteBase to automate the compilation of the source files, their removal, to simulate a injection of users into the database,
+to delete the database and to set the directory "output/bin" up.
+
+==================================================================
+On this manual we will see the use of each command and its meaning.
+==================================================================
+
+* IMPORTANT: the order of the commands bellow is intentionally organized as you just downloaded the project folder and you are ready to get started *
+
+1. make build
+-------------
+
+The "make build" command is used to make the directory: "output/bin" that will be filled with the database: "db.bin" and 
+the binary compiled source codes: "main.o", "funcs.o" and "/bytebase".
+
+If you run this command and the directory already exists, an error message of "[ERROR] the directory 'output/bin' already exists." will be displayed.
+
+2. make compile
+---------------
+
+The "make compile" command is used to compile the C source code files: "main.c", "funcs.c" and the header file: "funcs.h" into the binary
+and executable file: "bytebase" that will be used for managing the database with its own CLI commands.
+
+If you run this command  and the code be already compiled, no error will be displayed, the system will just alert you that there's not 
+new code to compile.
+
+3. make inject
+--------------
+
+The "make inject" command runs the python file "automation.py" that calls the python3 interpreter to execute the code that inserts 10000 users
+into the database 
+
+If you run this command and both the database "db.bin" and the directory: "output/bin" do not exist, an error message of
+"[ERROR] no such file of 'output/bin/bytebase'". will be displayed  
+
+
+4. make rmcode
+-------------
+
+The "make rmcode" stands for "remove code" and it is used to delete the binary compiled codes: "main.o", "funcs.o" and "bytebase".
+
+If you run the "make rmcode" command and there are no binary compiled code on the directory, an error massage 
+of "[ERROR] no such file found." will be displayed.
+
+5. make rmdb
+------------
+
+The "make rmdb" command stands for "remove database" and, as its name suggests, it deletes the database file: "db.bin" from the
+directory: "output/bin".
+
+If you run this command and there's no database file on the folder, an error message of "[ERROR] no such file of 'output/bin/db.bin' found."
+will be displayed.
+
+--------------------
+By: Igor Ruiz, Cybersecurity Student from Federal University of Itajuba (BRAZIL) 
+
