@@ -1,0 +1,203 @@
+FOR RUNNING ALL COMMANDS MAKE SURE YOU ARE IN THE SAME DIRECTORY AS THE BINARY: "BYTEBASE"
+
+Command/Program "./bytebase"
+
+RAW SYNTAX:
+
+    program subcommand [flags] [arguments]
+
+Example of a bytebase command:
+
+    ./bytebase SUBCOMMAND -flag <argument> SUBCOMMAND -flag <argument>
+
+NOTE:
+
+"bytebase" is the name of the program.
+To execute it properly, you must provide a subcommand followed by the required flags and arguments.
+
+Subcommands define the main operation that the program will perform.
+Flags specify which parameters are being provided.
+Arguments are the values associated with those flags.
+
+
+==================================================
+SUBCOMMAND: INSERT
+==================================================
+
+The INSERT subcommand is used to add a new user record to the database.
+
+FULL COMMAND:
+
+    ./bytebase INSERT -name <user_name> -age <user_age> -rg <user_rg> -cpf <user_cpf>
+
+SUBCOMMANDS:
+
+    INSERT -> inserts a new user into the database
+
+FLAGS:
+
+    -name -> specifies the user's name
+    -age  -> specifies the user's age
+    -rg   -> specifies the user's RG
+    -cpf  -> specifies the user's CPF
+
+Each flag indicates which field of the user record is being provided.
+
+ARGUMENTS:
+
+    <user_name> -> value representing the user's name
+    <user_age>  -> value representing the user's age
+    <user_rg>   -> value representing the user's RG
+    <user_cpf>  -> value representing the user's CPF
+
+Arguments are the actual data values associated with their respective flags.
+
+
+REQUIRED DATA FORMATS:
+
+    NAME: first name only, without numbers or special characters
+    AGE: only NUMBERS between 18 and 80 are allowed
+    RG: must follow the format "xxxxxxxx-x"
+    CPF: must follow the format "xxx.xxx.xxx-xx"
+
+NOTE:
+
+Any data that does not respect the required format will be rejected by the system.
+
+
+==================================================
+SUBCOMMANDS: SELECT and WHERE
+==================================================
+
+The SELECT subcommand is used to retrieve information about users stored in the database.
+The WHERE subcommand specifies which user record should be queried.
+
+FULL COMMAND:
+
+    ./bytebase SELECT -option <options> WHERE -id <index>
+
+SUBCOMMANDS:
+
+    SELECT -> defines which fields of the user record should be retrieved
+    WHERE  -> defines which user record will be queried
+
+FLAGS:
+
+    -option -> specifies which user fields should be returned
+    -id     -> specifies the ID of the user to be queried
+
+IMPORTANT NOTE:
+
+If <index> = 0, the system will perform the query for all active users in the database.
+
+
+ARGUMENTS:
+
+    <options> -> argument specifying which fields should be returned
+
+        name
+        age
+        rg
+        cpf
+        name,age,rg,cpf
+
+    <index> -> argument representing the user ID
+
+NOTE:
+
+You can query a single field:
+
+    name
+
+Or multiple fields separated by commas:
+
+    name,age,cpf
+
+
+==================================================
+SUBCOMMANDS: DELETE and WHERE
+==================================================
+
+The DELETE subcommand is used to remove a user record from the database.
+
+FULL COMMAND:
+
+    ./bytebase DELETE WHERE -id <index>
+
+SUBCOMMANDS:
+
+    DELETE -> indicates that a user record will be deleted
+    WHERE  -> specifies which user record should be deleted
+
+FLAGS:
+
+    -id -> specifies the ID of the user that will be removed from the database
+
+ARGUMENTS:
+
+    <index> -> value representing the ID of the user to be deleted
+
+
+==================================================
+SUBCOMMAND: GET
+==================================================
+
+The GET subcommand is used to retrieve general information about the database.
+
+FULL COMMAND:
+
+    ./bytebase GET -actives
+
+SUBCOMMANDS:
+
+    GET -> retrieves information from the database
+
+FLAGS:
+
+    -actives -> requests the total number of active users stored in the database
+
+
+==================================================
+SUBCOMMANDS: UPDATE and WHERE
+==================================================
+
+The UPDATE subcommand is used to modify an existing user record.
+
+FULL COMMAND:
+
+    ./bytebase UPDATE -option <option> WHERE -id <index> -newcontent <newcontent>
+
+SUBCOMMANDS:
+
+    UPDATE -> indicates that a user record will be updated
+    WHERE  -> specifies which user record will be updated
+
+FLAGS:
+
+    -option     -> specifies which field of the user record will be updated
+    -id         -> specifies the ID of the user whose data will be updated
+    -newcontent -> specifies the new value that will replace the current data
+
+ARGUMENTS:
+
+    <option>     -> field that will be modified (name, age, rg, or cpf)
+    <index>      -> ID of the user whose data will be updated
+    <newcontent> -> new value that will replace the existing data
+
+NOTE:
+
+In the UPDATE subcommand, only one option can be updated at a time.
+
+Valid example:
+
+    -option name
+
+Invalid example:
+
+    -option name,age
+
+Multiple fields cannot be updated in a single command.
+
+--------------------
+By: Igor Ruiz, Cybersecurity Student from Federal University of Itajuba (BRAZIL) 
+
