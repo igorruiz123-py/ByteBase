@@ -1,13 +1,20 @@
+#!/bin/bash
+
 DIR="output/bin"
+
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+RESET="\e[0m"
 
 if test -d "$DIR"; then
 
-    echo "[INFO] the directory 'output/bin' already exists."
+    printf "${RED} [ERROR] the directory 'output/bin' already exists. ${RESET} \n"
 
 else
 
-    echo "[INFO] setting environment up..."
+    printf "${YELLOW} [INFO] setting environment up... ${RESET} \n"
     mkdir -p $DIR
-    echo "[OK] environment ready."
+    printf "${GREEN} [OK] environment ready. ${RESET} \n"
 
 fi
