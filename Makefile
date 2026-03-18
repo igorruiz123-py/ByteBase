@@ -18,7 +18,7 @@ MAIN_SRC = $(SRC_PATH)/main.c
 
 FUNCS_SRC = $(SRC_PATH)/funcs.c
 
-.PHONY: compile clean inject build delete
+.PHONY: compile rmcode inject build rmdb
 
 $(BIN_PATH):
 	mkdir -p $(BIN_PATH)
@@ -37,7 +37,7 @@ compile:
 	$(MAKE) $(TARGET)
 	@echo "[OK] compilation done."
 
-clean:
+rmcode:
 	@echo "[INFO] removing source code..."
 	rm -f $(FILES_OBJ) $(TARGET)
 	@echo "[OK] source code removed."
@@ -53,7 +53,7 @@ build:
 	@echo "[OK] permission granted."
 	./build.sh
 
-delete:
+rmdb:
 	@echo "[INFO] granting executable permission for 'rmdb.sh'..."
 	chmod +x rmdb.sh
 	@echo "[OK] permission granted."
