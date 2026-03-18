@@ -1,3 +1,8 @@
+RED = \033[31m
+GREEN = \033[32m
+YELLOW = \033[33m
+RESET = \033[0m
+
 CC = gcc
 
 CFLAGS = -Iinclude
@@ -33,28 +38,27 @@ $(MAIN_OBJ): $(MAIN_SRC) | $(BIN_PATH)
 	$(CC) $(CFLAGS) -c $(MAIN_SRC) -o $(MAIN_OBJ)
 
 compile:
-	@echo "[INFO] compiling source code..."
+	@printf "$(YELLOW) [INFO] compiling source code... $(RESET) \n"
 	$(MAKE) $(TARGET)
-	@echo "[OK] compilation done."
+	@printf "$(GREEN) [OK] compilation done. $(RESET) \n"
 
 rmcode:
-	@echo "[INFO] removing source code..."
-	rm -f $(FILES_OBJ) $(TARGET)
-	@echo "[OK] source code removed."
+	@printf "$(YELLOW) [INFO] granting executable permission for 'rmcode.sh'... $(RESET) \n"
+	chmod +x rmcode.sh
+	@printf "$(GREEN) [OK] permission granted. $(RESET) \n"
+	./rmcode.sh
 
 inject:
-	@echo "[INFO] starting users injection on the database..."
 	python3 automation.py
-	@echo "[OK] injection done."
 
 build:
-	@echo "[INFO] granting executable permission for 'build.sh'..."
+	@printf "$(YELLOW) [INFO] granting executable permission for 'build.sh'... $(RESET) \n"
 	chmod +x build.sh
-	@echo "[OK] permission granted."
+	@printf "$(GREEN) [OK] permission granted. $(RESET) \n"
 	./build.sh
 
 rmdb:
-	@echo "[INFO] granting executable permission for 'rmdb.sh'..."
+	@printf "$(YELLOW) [INFO] granting executable permission for 'rmdb.sh'... $(RESET) \n"
 	chmod +x rmdb.sh
-	@echo "[OK] permission granted."
+	@printf "$(GREEN) [OK] permission granted. $(RESET) \n"
 	./rmdb.sh
