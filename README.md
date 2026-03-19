@@ -81,7 +81,7 @@ make rmcode
 ``` bash
 make rmdb
 ```
-*For more information about the "make" commands, go to docs/bytebase_manual.txt*
+*For more information about the "make" commands, go to docs/make_manual.txt*
 
 ## ByteBase Commands
 
@@ -117,7 +117,7 @@ make rmdb
 ./bytebase GET -actives
 ```
 
-*For more information about the "bytebase" commands, go to docs/make_manual.txt*
+*For more information about the "bytebase" commands, go to docs/bytebase_manual.txt*
 
 ## Technologies
 
