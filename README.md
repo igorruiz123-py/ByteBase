@@ -31,7 +31,7 @@ The goal of this portfolio project is to understand how a simple, but functional
 SSH 
 
  ```bash
-git clone git@github.com:igorruiz123-py/wordx.git
+git clone git@github.com:igorruiz123-py/ByteBase.git
 ```
 
 HTTPS
