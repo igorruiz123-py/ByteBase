@@ -122,7 +122,7 @@ make rmdb
 ## Technologies
 
 <p>
-  <img src="assets/c.png" width="100" height="100"/>  <img src="assets/bash.png" width="200" height="200"/>  <img src="assets/makefile.png" width="200" height="200"/>   <img src="assets/python.png" width="150" height="150" />
+  <img src="assets/c.png" width="100" height="100"/>  <img src="assets/bash.png" width="200" height="200"/>  <img src="assets/makefile.png" width="200" height="200"/>   <img src="assets/python.png" width="100" height="100" />
 </p>
 
 
