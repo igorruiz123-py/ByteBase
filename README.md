@@ -119,5 +119,11 @@ make rmdb
 
 *For more information about the "bytebase" commands, go to docs/make_manual.txt*
 
+## Technologies
+
+<p>
+  <img src="assets/c.png" width="100" height="100"/>  <img src="assets/bash.png" width="200" height="200"/>  <img src="assets/makefile.png" width="200" height="200"/>   <img src="assets/python.png"/>
+</p>
+
 
 # Made with ❤️ by Igor Ruiz, Cybersecurity Student from Federal University of Itajuba.
