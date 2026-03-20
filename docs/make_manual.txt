@@ -20,7 +20,7 @@ On this manual we will see the use of each command and its meaning.
 -------------
 
 The "make build" command is used to make the directory: "output/bin" that will be filled with the database: "db.bin" and 
-the binary compiled source codes: "main.o", "funcs.o" and "/bytebase".
+the binary compiled source codes: "main.o", "funcs.o" and "bytebase".
 
 If you run this command and the directory already exists, an error message of "[ERROR] the directory 'output/bin' already exists." will be displayed.
 
@@ -48,7 +48,7 @@ If you run this command and both the database "db.bin" and the directory: "outpu
 
 The "make rmcode" stands for "remove code" and it is used to delete the binary compiled codes: "main.o", "funcs.o" and "bytebase".
 
-If you run the "make rmcode" command and there are no binary compiled code on the directory, an error massage 
+If you run the "make rmcode" command and there is no binary compiled code on the directory, an error massage 
 of "[ERROR] no such file found." will be displayed.
 
 5. make rmdb
