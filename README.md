@@ -42,7 +42,7 @@ git clone https://github.com/igorruiz123-py/ByteBase.git
 
 2. Zip folder:
 
-On the wordx project home page on github go to:
+On the bytebase project home page on github go to:
 
 ```Code -> Download ZIP``` 
 
